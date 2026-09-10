@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>avapp导航 - 精选影音娱乐应用导航与推荐指南</title>
+    <meta name="description" content="avapp导航是一个专注于影音娱乐应用与视频工具的精选导航站，为用户提供热门影视APP、播放器工具、在线资源站点的分类收录与使用指引，帮助您快速找到适合的影音应用。">
+    <meta name="keywords" content="avapp导航,影音应用,视频APP,播放器推荐,影视导航,娱乐应用,在线视频,APP推荐">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #f5f7fa;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 页眉 */
+        .site-header {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fbbf24;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo-icon {
+            font-size: 28px;
+        }
+        .logo span {
+            color: #e2e8f0;
+            font-weight: 400;
+            font-size: 14px;
+            margin-left: 6px;
+        }
+        .main-nav ul {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .main-nav ul li a {
+            color: #cbd5e0;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 6px 4px;
+            transition: color 0.2s;
+            border-bottom: 2px solid transparent;
+        }
+        .main-nav ul li a:hover {
+            color: #fbbf24;
+            border-bottom-color: #fbbf24;
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            border-radius: 30px;
+            padding: 6px 6px 6px 16px;
+        }
+        .search-box input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #e2e8f0;
+            font-size: 14px;
+            width: 180px;
+        }
+        .search-box input::placeholder {
+            color: #a0aec0;
+        }
+        .search-box button {
+            background: #fbbf24;
+            border: none;
+            border-radius: 20px;
+            padding: 6px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            color: #1a202c;
+            transition: background 0.2s;
+        }
+        .search-box button:hover {
+            background: #f59e0b;
+        }
+
+        /* 首屏横幅 */
+        .hero-section {
+            background: linear-gradient(145deg, #2d3748 0%, #4a5568 60%, #718096 100%);
+            color: #f7fafc;
+            padding: 70px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: -40%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(251,191,36,0.08);
+            border-radius: 50%;
+        }
+        .hero-section::after {
+            content: "";
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 260px;
+            height: 260px;
+            background: rgba(251,191,36,0.05);
+            border-radius: 50%;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-content h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+        .hero-content p {
+            font-size: 17px;
+            color: #cbd5e0;
+            max-width: 650px;
+            margin: 0 auto 28px;
+            line-height: 1.7;
+        }
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: #fbbf24;
+            color: #1a202c;
+            padding: 12px 32px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.2s, background 0.2s;
+            display: inline-block;
+        }
+        .btn-primary:hover {
+            background: #f59e0b;
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            border: 2px solid #a0aec0;
+            color: #e2e8f0;
+            padding: 10px 30px;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+        .btn-outline:hover {
+            border-color: #fbbf24;
+            color: #fbbf24;
+        }
+
+        /* 分类区块 */
+        .section {
+            padding: 50px 0;
+        }
+        .section-title {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #1a202c;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: #fbbf24;
+            border-radius: 2px;
+        }
+        .section-desc {
+            color: #718096;
+            margin-bottom: 28px;
+            font-size: 15px;
+            margin-top: 10px;
+        }
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 20px;
+        }
+        .category-card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 24px 18px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: all 0.25s;
+            border: 1px solid #edf2f7;
+        }
+        .category-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            border-color: #fbbf24;
+        }
+        .category-icon {
+            font-size: 36px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .category-name {
+            font-weight: 600;
+            font-size: 16px;
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        .category-count {
+            font-size: 13px;
+            color: #a0aec0;
+        }
+
+        /* 热门推荐卡片 */
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .app-card {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            transition: all 0.3s;
+            border: 1px solid #edf2f7;
+            display: flex;
+            flex-direction: column;
+        }
+        .app-card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
+        }
+        .app-card-header {
+            padding: 20px 20px 10px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .app-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+            flex-shrink: 0;
+        }
+        .app-title {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .app-tag {
+            font-size: 12px;
+            background: #ebf8ff;
+            color: #2b6cb0;
+            padding: 2px 10px;
+            border-radius: 12px;
+            display: inline-block;
+            margin-top: 4px;
+        }
+        .app-card-body {
+            padding: 10px 20px 16px;
+            flex: 1;
+        }
+        .app-desc {
+            font-size: 14px;
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+        .app-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #a0aec0;
+            border-top: 1px solid #f0f4f8;
+            padding-top: 12px;
+        }
+        .app-link {
+            display: inline-block;
+            background: #edf2f7;
+            color: #2d3748;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .app-link:hover {
+            background: #fbbf24;
+            color: #1a202c;
+        }
+
+        /* 使用指南 */
+        .guide-section {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            border: 1px solid #edf2f7;
+        }
+        .guide-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-top: 24px;
+        }
+        .step-item {
+            text-align: center;
+            padding: 20px 10px;
+        }
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: #fbbf24;
+            color: #1a202c;
+            font-size: 20px;
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+        }
+        .step-item h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+            color: #2d3748;
+        }
+        .step-item p {
+            font-size: 14px;
+            color: #718096;
+        }
+
+        /* 安全提示 */
+        .safety-tips {
+            background: #fffaf0;
+            border-left: 4px solid #fbbf24;
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 30px 0;
+        }
+        .safety-tips h3 {
+            font-size: 18px;
+            color: #744210;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .safety-tips ul {
+            padding-left: 20px;
+            list-style: disc;
+            color: #5f370e;
+            font-size: 15px;
+        }
+        .safety-tips li {
+            margin-bottom: 6px;
+        }
+
+        /* FAQ */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.03);
+            border: 1px solid #edf2f7;
+        }
+        .faq-item h3 {
+            font-size: 17px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .faq-item p {
+            font-size: 15px;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        /* 页脚 */
+        .site-footer {
+            background: #1a202c;
+            color: #a0aec0;
+            padding: 40px 0 30px;
+            margin-top: 40px;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-col h4 {
+            color: #e2e8f0;
+            font-size: 16px;
+            margin-bottom: 16px;
+        }
+        .footer-col ul li {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        .footer-col ul li a:hover {
+            color: #fbbf24;
+        }
+        .footer-bottom {
+            border-top: 1px solid #2d3748;
+            padding-top: 24px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .main-nav ul {
+                gap: 14px;
+                flex-wrap: wrap;
+            }
+            .search-box {
+                width: 100%;
+            }
+            .search-box input {
+                flex: 1;
+                width: auto;
+            }
+            .hero-content h1 {
+                font-size: 30px;
+            }
+            .hero-content p {
+                font-size: 15px;
+            }
+            .section {
+                padding: 36px 0;
+            }
+            .app-grid {
+                grid-template-columns: 1fr;
+            }
+            .guide-section {
+                padding: 24px;
+            }
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+    <!-- 页眉 -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <span class="logo-icon">▶</span> avapp导航
+                <span>影音应用精选</span>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#categories">分类</a></li>
+                    <li><a href="#hot">热门推荐</a></li>
+                    <li><a href="#guide">使用指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="搜索应用名称...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- 首屏 -->
+    <section class="hero-section" id="home">
+        <div class="container hero-content">
+            <h1>avapp导航</h1>
+            <p>汇集优质影音娱乐应用与视频工具，提供清晰分类与使用指引，帮您快速找到适合的播放器、影视APP与在线资源平台。一站式导航，让观影更简单。</p>
+            <div class="hero-buttons">
+                <a href="#hot" class="btn-primary">浏览热门应用</a>
+                <a href="#categories" class="btn-outline">查看全部分类</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 分类 -->
+    <section class="section" id="categories">
+        <div class="container">
+            <h2 class="section-title">应用分类</h2>
+            <p class="section-desc">覆盖主流影音娱乐应用类型，快速定位所需导航</p>
+            <div class="category-grid">
+                <div class="category-card">
+                    <span class="category-icon">📺</span>
+                    <div class="category-name">在线影视</div>
+                    <div class="category-count">收录 100+ 应用</div>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">📱</span>
+                    <div class="category-name">视频播放器</div>
+                    <div class="category-count">收录 80+ 应用</div>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">🎵</span>
+                    <div class="category-name">音乐音频</div>
+                    <div class="category-count">收录 60+ 应用</div>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">📡</span>
+                    <div class="category-name">直播工具</div>
+                    <div class="category-count">收录 50+ 应用</div>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">🔍</span>
+                    <div class="category-name">资源搜索</div>
+                    <div class="category-count">收录 70+ 站点</div>
+                </div>
+                <div class="category-card">
+                    <span class="category-icon">⚙️</span>
+                    <div class="category-name">实用工具</div>
+                    <div class="category-count">收录 40+ 应用</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 热门推荐 -->
+    <section class="section" id="hot" style="background:#edf2f7;">
+        <div class="container">
+            <h2 class="section-title">热门影音应用推荐</h2>
+            <p class="section-desc">基于用户反馈与功能实用性整理的精选应用导航</p>
+            <div class="app-grid">
+                <article class="app-card">
+                    <div class="app-card-header">
+                        <div class="app-icon" style="background:#e53e3e;">影</div>
+                        <div>
+                            <div class="app-title">影视聚合APP</div>
+                            <span class="app-tag">在线影视</span>
+                        </div>
+                    </div>
+                    <div class="app-card-body">
+                        <p class="app-desc">聚合多个主流视频源，支持高清解析与多线路切换，界面简洁，适合日常追剧观影。</p>
+                        <div class="app-meta">
+                            <span>★★★★☆</span>
+                            <a href="#" class="app-link">查看详情</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="app-card">
+                    <div class="app-card-header">
+                        <div class="app-icon" style="background:#3182ce;">播</div>
+                        <div>
+                            <div class="app-title">全能播放器</div>
+                            <span class="app-tag">视频播放器</span>
+                        </div>
+                    </div>
+                    <div class="app-card-body">
+                        <p class="app-desc">支持本地视频播放与网络流媒体，兼容多种格式，具备倍速播放、字幕加载等实用功能。</p>
+                        <div class="app-meta">
+                            <span>★★★★★</span>
+                            <a href="#" class="app-link">查看详情</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="app-card">
+                    <div class="app-card-header">
+                        <div class="app-icon" style="background:#38a169;">音</div>
+                        <div>
+                            <div class="app-title">音乐随心听</div>
+                            <span class="app-tag">音乐音频</span>
+                        </div>
+                    </div>
+                    <div class="app-card-body">
+                        <p class="app-desc">海量音乐库与在线电台，支持歌单同步与离线下载，打造个性化听觉体验。</p>
+                        <div class="app-meta">
+                            <span>★★★★☆</span>
+                            <a href="#" class="app-link">查看详情</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="app-card">
+                    <div class="app-card-header">
+                        <div class="app-icon" style="background:#805ad5;">直</div>
+                        <div>
+                            <div class="app-title">直播助手</div>
+                            <span class="app-tag">直播工具</span>
+                        </div>
+                    </div>
+                    <div class="app-card-body">
+                        <p class="app-desc">整合热门直播平台，支持多窗口观看与录播回放，不错过任何精彩内容。</p>
+                        <div class="app-meta">
+                            <span>★★★★☆</span>
+                            <a href="#" class="app-link">查看详情</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="app-card">
+                    <div class="app-card-header">
+                        <div class="app-icon" style="background:#d69e2e;">搜</div>
+                        <div>
+                            <div class="app-title">资源搜索神器</div>
+                            <span class="app-tag">资源搜索</span>
+                        </div>
+                    </div>
+                    <div class="app-card-body">
+                        <p class="app-desc">跨平台聚合搜索工具，快速定位网络影视资源，支持多种关键词匹配模式。</p>
+                        <div class="app-meta">
+                            <span>★★★★☆</span>
+                            <a href="#" class="app-link">查看详情</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="app-card">
+                    <div class="app-card-header">
+                        <div class="app-icon" style="background:#718096;">工</div>
+                        <div>
+                            <div class="app-title">格式转换工具</div>
+                            <span class="app-tag">实用工具</span>
+                        </div>
+                    </div>
+                    <div class="app-card-body">
+                        <p class="app-desc">提供视频格式转换、压缩与提取功能，操作简单，满足日常媒体处理需求。</p>
+                        <div class="app-meta">
+                            <span>★★★☆☆</span>
+                            <a href="#" class="app-link">查看详情</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 使用指南 -->
+    <section class="section" id="guide">
+        <div class="container">
+            <h2 class="section-title">使用指南</h2>
+            <p class="section-desc">如何高效利用 avapp导航 找到合适的影音应用</p>
+            <div class="guide-section">
+                <div class="guide-steps">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <h3>明确需求</h3>
+                        <p>先确定您需要的应用类型：在线观影、本地播放、音乐收听还是直播观看。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <h3>分类浏览</h3>
+                        <p>通过顶部导航或分类板块进入对应类别，查看收录的应用列表。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <h3>阅读详情</h3>
+                        <p>点击应用卡片查看详细介绍、功能特点及用户评分，辅助决策。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <h3>安全下载</h3>
+                        <p>建议从官方渠道或可信来源获取应用，安装时注意权限授予。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="safety-tips">
+                <h3>⚠️ 安全使用提示</h3>
+                <ul>
+                    <li>请从官方应用商店或应用官网下载，避免使用不明来源的安装包。</li>
+                    <li>安装应用时留意权限请求，谨慎授予通讯录、短信等敏感权限。</li>
+                    <li>不要轻信"破解版""无限会员"等宣传，此类应用可能存在安全风险。</li>
+                    <li>观看在线影视时，注意甄别资源来源，避免访问含恶意广告的站点。</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section class="section" id="faq" style="background:#edf2f7;">
+        <div class="container">
+            <h2 class="section-title">常见问题</h2>
+            <p class="section-desc">关于 avapp导航 的使用疑问解答</p>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>❓ avapp导航是什么？</h3>
+                    <p>avapp导航是一个影音娱乐应用导航平台，将各类影视APP、播放器、音乐工具和直播应用进行整理分类，帮助用户快速找到需要的工具和资源。本站以导航和推荐为主，不提供应用安装包的直接下载。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>❓ 如何收藏常用的应用？</h3>
+                    <p>您可以使用浏览器的书签功能收藏常用应用页面。后续我们也会推出用户收藏功能，方便您建立个人应用库。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>❓ 应用收录标准是什么？</h3>
+                    <p>我们主要收录界面友好、功能实用、用户口碑较好的应用。对于来源不明、存在恶意广告或频繁弹窗的应用，一律不予收录。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>❓ 发现失效链接怎么办？</h3>
+                    <p>如果您发现某个应用链接失效或信息有误，欢迎通过页面底部的联系方式反馈给我们，我们会及时核实更新。</p>
+                </div>
+                <div class="faq-item">
+                    <h3>❓ 是否提供应用下载服务？</h3>
+                    <p>本站定位为导航与信息聚合，不直接托管任何应用安装包。我们会提供应用官网或官方商店入口，由您自行决定是否下载。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h4>avapp导航</h4>
+                    <ul>
+                        <li>专注于影音娱乐应用导航与推荐</li>
+                        <li>提供安全、高效的应用发现体验</li>
+                        <li>本站内容仅供参考</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#categories">应用分类</a></li>
+                        <li><a href="#hot">热门推荐</a></li>
+                        <li><a href="#guide">使用指南</a></li>
+                        <li><a href="#faq">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>建议反馈</h4>
+                    <ul>
+                        <li>如果您有好的应用推荐</li>
+                        <li>或发现内容有误</li>
+                        <li>欢迎联系我们更新</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 avapp导航 版权所有 | 本站为影音应用导航站，请合理使用网络资源</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                      </html>
