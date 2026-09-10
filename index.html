@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>书皮设计-创意手工书衣制作方法与灵感分享</title>
+    <meta name="description" content="探索书皮设计的创意世界，从简约牛皮纸到布艺手工书衣，获取实用的书皮制作方法、材料选择与设计灵感，让每一本书都拥有独特个性。">
+    <meta name="keywords" content="书皮设计,手工书皮,书衣制作,包书皮教程,书皮材料,创意书皮,布艺书皮,牛皮纸书皮,书籍保护">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: #faf8f5;
+            color: #2c2c2c;
+            line-height: 1.7;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* 头部 */
+        .site-header {
+            background: linear-gradient(135deg, #4a3728 0%, #6d5136 100%);
+            color: #f5efe6;
+            padding: 20px 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .logo-area h1 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 4px;
+            color: #f5efe6;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .logo-area p {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            color: #e0d6c8;
+        }
+        .main-nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+        .main-nav a {
+            color: #f5efe6;
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+        .main-nav a:hover {
+            border-bottom-color: #d4b896;
+            color: #fff;
+        }
+        /* 首屏Banner */
+        .hero {
+            background: #f1e8dc;
+            padding: 60px 0 50px;
+            border-bottom: 1px solid #e5d9cb;
+        }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .hero-text h2 {
+            font-size: 2.4rem;
+            color: #3e2f22;
+            line-height: 1.3;
+            margin-bottom: 18px;
+            font-weight: 700;
+        }
+        .hero-text p {
+            font-size: 1.1rem;
+            color: #5a4a3a;
+            margin-bottom: 28px;
+            max-width: 90%;
+        }
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: #6d5136;
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background: #4a3728;
+        }
+        .btn-outline {
+            background: transparent;
+            color: #6d5136;
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+            border: 2px solid #6d5136;
+            transition: all 0.3s;
+        }
+        .btn-outline:hover {
+            background: #6d5136;
+            color: #fff;
+        }
+        .hero-visual {
+            background: #d9c7b3;
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 260px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+        .hero-visual .book-icon {
+            font-size: 4.5rem;
+            margin-bottom: 15px;
+        }
+        .hero-visual .mini-tag {
+            background: rgba(255,255,255,0.7);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: #3e2f22;
+            margin: 6px 0;
+        }
+        /* 设计风格导览 */
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #3e2f22;
+            margin-bottom: 10px;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #b99a7c;
+            margin: 12px auto 0;
+            border-radius: 3px;
+        }
+        .section-sub {
+            text-align: center;
+            color: #7a6a5a;
+            margin-bottom: 40px;
+            font-size: 1rem;
+        }
+        .styles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        .style-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid #b99a7c;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .style-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        .style-card .emoji {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        .style-card h3 {
+            font-size: 1.3rem;
+            color: #3e2f22;
+            margin-bottom: 10px;
+        }
+        .style-card p {
+            color: #5f5348;
+            font-size: 0.95rem;
+        }
+        /* 教程步骤 */
+        .tutorial-section {
+            background: #f1e8dc;
+            padding: 70px 0;
+            margin-top: 30px;
+        }
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .step-item {
+            background: #fff;
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        .step-number {
+            background: #6d5136;
+            color: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin: 0 auto 15px;
+        }
+        .step-item h3 {
+            color: #3e2f22;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        .step-item p {
+            color: #6b5d4f;
+            font-size: 0.92rem;
+        }
+        /* 材质选择 */
+        .material-section {
+            padding: 70px 0;
+        }
+        .material-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 25px;
+        }
+        .material-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #e8dfd3;
+            transition: border-color 0.3s;
+        }
+        .material-card:hover {
+            border-color: #b99a7c;
+        }
+        .material-card .mat-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+        .material-card h4 {
+            color: #3e2f22;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        .material-card p {
+            font-size: 0.85rem;
+            color: #6b5d4f;
+        }
+        /* 灵感展示 */
+        .inspire-section {
+            background: #f1e8dc;
+            padding: 70px 0;
+        }
+        .inspire-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+        .inspire-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+        .inspire-img {
+            background: linear-gradient(145deg, #d9c7b3, #c3a98a);
+            height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+        .inspire-body {
+            padding: 20px;
+        }
+        .inspire-body h3 {
+            font-size: 1.15rem;
+            color: #3e2f22;
+            margin-bottom: 8px;
+        }
+        .inspire-body p {
+            font-size: 0.9rem;
+            color: #5f5348;
+        }
+        /* FAQ */
+        .faq-section {
+            padding: 70px 0;
+        }
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 22px 25px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            border-left: 4px solid #b99a7c;
+        }
+        .faq-item h3 {
+            font-size: 1.1rem;
+            color: #3e2f22;
+            margin-bottom: 8px;
+        }
+        .faq-item p {
+            color: #5f5348;
+            font-size: 0.95rem;
+        }
+        /* 页脚 */
+        .site-footer {
+            background: #2f2419;
+            color: #cbb9a5;
+            padding: 40px 0 30px;
+            margin-top: 20px;
+        }
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .footer-col h4 {
+            color: #e0d6c8;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col ul li {
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        .footer-bottom {
+            border-top: 1px solid #4a3b2e;
+            margin-top: 30px;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #9a8a78;
+        }
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-text p {
+                max-width: 100%;
+                margin: 0 auto 25px;
+            }
+            .btn-group {
+                justify-content: center;
+            }
+            .header-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+            .main-nav ul {
+                justify-content: center;
+                gap: 20px;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero-text h2 {
+                font-size: 1.8rem;
+            }
+            .hero {
+                padding: 40px 0;
+            }
+            .style-card, .step-item {
+                padding: 20px;
+            }
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo-area">
+                <h1>书皮设计</h1>
+                <p>手工书衣 · 创意包书 · 专属封面</p>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#styles">风格灵感</a></li>
+                    <li><a href="#tutorial">制作教程</a></li>
+                    <li><a href="#material">材料选择</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <h2>让每一本书<br>都拥有独一无二的封面</h2>
+                <p>从实用牛皮纸到精致布艺书衣，书皮设计不仅是保护书籍的方式，更是表达个性与审美的创作过程。这里为你整理多种风格的书皮设计与制作方法，无论是学生党还是手作爱好者，都能找到适合自己的灵感。</p>
+                <div class="btn-group">
+                    <a href="#tutorial" class="btn-primary">查看制作教程</a>
+                    <a href="#styles" class="btn-outline">浏览设计风格</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="book-icon">📚</div>
+                <div class="mini-tag">✂️ 手工书衣</div>
+                <div class="mini-tag">🎨 创意封面</div>
+                <div class="mini-tag">🧵 布艺包书</div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- 设计风格导览 -->
+        <section id="styles" class="container" style="padding: 70px 20px;">
+            <h2 class="section-title">书皮设计风格导览</h2>
+            <p class="section-sub">不同材质与风格，赋予书籍不同的气质</p>
+            <div class="styles-grid">
+                <div class="style-card">
+                    <div class="emoji">📜</div>
+                    <h3>简约牛皮纸风</h3>
+                    <p>经典牛皮纸书皮，质朴耐用。可搭配手写书名、印章或简笔画，适合学生课本与日常阅读，低调却充满温度。</p>
+                </div>
+                <div class="style-card">
+                    <div class="emoji">🌸</div>
+                    <h3>文艺布艺书衣</h3>
+                    <p>使用棉麻、帆布或碎花布制作可拆洗书衣，手感温润。搭配刺绣或蕾丝边，让书籍成为书桌上的艺术品。</p>
+                </div>
+                <div class="style-card">
+                    <div class="emoji">🎨</div>
+                    <h3>手绘创意封面</h3>
+                    <p>在纯色书皮上自由创作，水彩、马克笔、丙烯都能展现个性。适合笔记本、手账本与限量版小说。</p>
+                </div>
+                <div class="style-card">
+                    <div class="emoji">🧾</div>
+                    <h3>透明书套保护</h3>
+                    <p>若不想遮盖原封面，透明自粘书皮或PVC书套是理想选择。防尘防水的同时完整保留书籍原设计。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 制作教程 -->
+        <section id="tutorial" class="tutorial-section">
+            <div class="container">
+                <h2 class="section-title">新手也能上手的书皮制作教程</h2>
+                <p class="section-sub">只需简单工具，完成一个实用的书皮</p>
+                <div class="steps-container">
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <h3>测量书本尺寸</h3>
+                        <p>用软尺测量书的高度、宽度和厚度，并在书皮材料上预留出三边各3-5厘米的折边空间。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <h3>裁剪主体材料</h3>
+                        <p>根据测量数据裁剪牛皮纸或布料，注意边缘要平直。布料可先用熨斗烫平，方便折叠。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <h3>折叠包覆书壳</h3>
+                        <p>将书放在材料中央，先把上下边折入书壳内，再将左右边折入，形成口袋状固定书本。</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <h3>装饰与定型</h3>
+                        <p>用胶水或双面胶固定折边，再添加姓名贴、装饰胶带或绘制图案，最后压平晾干即可。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 材质选择 -->
+        <section id="material" class="material-section">
+            <div class="container">
+                <h2 class="section-title">常见书皮材料对比</h2>
+                <p class="section-sub">根据用途选择合适的书皮材质</p>
+                <div class="material-grid">
+                    <div class="material-card">
+                        <div class="mat-icon">🟤</div>
+                        <h4>牛皮纸</h4>
+                        <p>结实耐磨，价格实惠，适合课本与常用书籍，可反复包覆。</p>
+                    </div>
+                    <div class="material-card">
+                        <div class="mat-icon">🧵</div>
+                        <h4>棉麻布料</h4>
+                        <p>柔软透气，可水洗重复使用，触感舒适，适合精装书与手账。</p>
+                    </div>
+                    <div class="material-card">
+                        <div class="mat-icon">💧</div>
+                        <h4>透明PP膜</h4>
+                        <p>防水防污，透明度高，适合需要保留原封面的珍贵书籍。</p>
+                    </div>
+                    <div class="material-card">
+                        <div class="mat-icon">🎭</div>
+                        <h4>艺术卡纸</h4>
+                        <p>色彩丰富，挺括易造型，适合制作礼品书或展示型封面。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 灵感展示 -->
+        <section class="inspire-section">
+            <div class="container">
+                <h2 class="section-title">书皮设计灵感集</h2>
+                <p class="section-sub">看看这些别出心裁的书皮创意</p>
+                <div class="inspire-grid">
+                    <div class="inspire-card">
+                        <div class="inspire-img">🌿</div>
+                        <div class="inspire-body">
+                            <h3>植物压花书皮</h3>
+                            <p>将干燥的叶片或花瓣夹在两层半透明纸之间，制作出充满自然气息的独特书皮。</p>
+                        </div>
+                    </div>
+                    <div class="inspire-card">
+                        <div class="inspire-img">✒️</div>
+                        <div class="inspire-body">
+                            <h3>复古烫金标题</h3>
+                            <p>在深色卡纸上用金色油漆笔手写书名，搭配复古胶带与邮票贴纸，文艺感十足。</p>
+                        </div>
+                    </div>
+                    <div class="inspire-card">
+                        <div class="inspire-img">🧶</div>
+                        <div class="inspire-body">
+                            <h3>编织挂饰书签</h3>
+                            <p>在书脊处缝上编织绳或流苏，既能作为书签，又让书皮多了几分手作趣味。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <h2 class="section-title">书皮设计常见问题</h2>
+                <p class="section-sub">解答你对手工书皮的疑问</p>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3>布艺书皮脏了怎么清洗？</h3>
+                        <p>建议将书本取出后，用冷水加中性洗涤剂轻柔手洗，自然晾干后熨烫平整。避免机洗，以免布料缩水变形。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>牛皮纸书皮容易破损怎么办？</h3>
+                        <p>可以选择克重较高（120g以上）的牛皮纸，或在书角处额外粘贴透明胶带加固。若经常使用，建议搭配透明书套。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>如何让手绘书皮不易掉色？</h3>
+                        <p>使用丙烯颜料或油性马克笔绘制，待完全干透后，可均匀喷涂一层定画液或覆盖透明自粘膜，起到保护作用。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>书皮尺寸量不准怎么办？</h3>
+                        <p>测量时书本需平放，用直尺量取长宽，厚度可测量书脊最厚处。裁剪时宁大勿小，多出的边可折入内部，不影响美观。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-col">
+                    <h4>书皮设计</h4>
+                    <ul>
+                        <li>创意手工书衣指南</li>
+                        <li>实用包书方法分享</li>
+                        <li>材料与工具推荐</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>热门专题</h4>
+                    <ul>
+                        <li>学生课本保护</li>
+                        <li>手账本封面改造</li>
+                        <li>礼物书包装创意</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>浏览更多</h4>
+                    <ul>
+                        <li>设计灵感集</li>
+                        <li>新手教程汇总</li>
+                        <li>常见问题解答</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 书皮设计分享站 · 用创意守护每一本书</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
